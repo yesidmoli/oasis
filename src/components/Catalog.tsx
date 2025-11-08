@@ -1,52 +1,55 @@
 import IceCreamCard from "./IceCreamCard";
 
+// Obtener el base path para las imágenes
+const basePath = import.meta.env.BASE_URL;
+
 const iceCreamFlavors = [
   {
     name: "Fresa y Crema",
     description: "Deliciosa combinación de fresas frescas con crema suave",
-    imageUrl: "/Oasis Screan/Fresacrema.png",
+    imageUrl: `${basePath}oasis-screan/Fresacrema.png`,
     color: "#FF69B4",
   },
   {
     name: "Maní",
     description: "Cremoso helado con el irresistible sabor del maní",
-    imageUrl: "/Oasis Screan/Mani.png",
+    imageUrl: `${basePath}oasis-screan/Mani.png`,
     color: "#8B4513",
   },
   {
     name: "Coco",
     description: "Refrescante sabor tropical de coco natural",
-    imageUrl: "/Oasis Screan/coco.png",
+    imageUrl: `${basePath}oasis-screan/coco.png`,
     color: "#8B6F47",
   },
   {
     name: "Aguacate",
     description: "Único y cremoso, perfecto para los amantes de lo diferente",
-    imageUrl: "/Oasis Screan/aguacate.png",
+    imageUrl: `${basePath}oasis-screan/aguacate.png`,
     color: "#90EE90",
   },
   {
     name: "Queso y Bocadillo",
     description: "La tradicional combinación colombiana en helado",
-    imageUrl: "/Oasis Screan/quesoboca.png",
+    imageUrl: `${basePath}oasis-screan/quesoboca.png`,
     color: "#CD853F",
   },
   {
     name: "Arequipe",
     description: "Dulce de leche cremoso que derrite tu corazón",
-    imageUrl: "/Oasis Screan/arequipe.png",
+    imageUrl: `${basePath}oasis-screan/arequipe.png`,
     color: "#D2691E",
   },
   {
     name: "Maracuyá",
     description: "Explosión tropical de sabor ácido y refrescante",
-    imageUrl: "/Oasis Screan/maracuya.png",
+    imageUrl: `${basePath}oasis-screan/maracuya.png`,
     color: "#FFD700",
   },
   {
     name: "Mora",
     description: "Intenso y delicioso sabor de moras naturales",
-    imageUrl: "/Oasis Screan/mora.png",
+    imageUrl: `${basePath}oasis-screan/mora.png`,
     color: "#8B008B",
   },
 ];

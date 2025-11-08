@@ -48,7 +48,7 @@ const Hero = () => {
           <span className="block mt-2 flex items-center justify-center gap-3">
             de un <span className="text-tropical-pink">Oasis</span>
             <img 
-              src="/Oasis Screan/mora.png" 
+              src={`${import.meta.env.BASE_URL}oasis-screan/mora.png`}
               alt="Helado de mora" 
               className="w-16 h-16 md:w-20 md:h-20 inline-block animate-float-slow drop-shadow-2xl"
             />
