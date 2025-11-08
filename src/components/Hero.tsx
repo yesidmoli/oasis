@@ -43,15 +43,10 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 animate-fade-in"
-            style={{
-              textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2)'
-            }}>
+        <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 animate-fade-in">
           Refresca tu día con el sabor
           <span className="block mt-2">
-            de un <span className="text-tropical-pink" style={{
-              textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)'
-            }}>Oasis</span> 🍦
+            de un <span className="text-tropical-pink">Oasis</span> 🍧
           </span>
         </h1>
         
