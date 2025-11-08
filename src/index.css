@@ -45,6 +45,7 @@ All colors MUST be HSL.
     --tropical-palm: 150 50% 45%;
     --tropical-turquoise: 174 76% 54%;
     --tropical-cream: 45 100% 96%;
+    --tropical-pink: 340 82% 68%;
     
     /* Gradients */
     --gradient-tropical: linear-gradient(135deg, hsl(var(--tropical-sun)) 0%, hsl(var(--tropical-orange)) 100%);
@@ -238,6 +239,14 @@ All colors MUST be HSL.
   
   .bg-tropical-turquoise {
     background-color: hsl(var(--tropical-turquoise));
+  }
+  
+  .text-tropical-pink {
+    color: hsl(var(--tropical-pink));
+  }
+  
+  .bg-tropical-pink {
+    background-color: hsl(var(--tropical-pink));
   }
   
   .font-playful {

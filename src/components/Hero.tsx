@@ -43,12 +43,22 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 drop-shadow-lg animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 animate-fade-in"
+            style={{
+              textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2)'
+            }}>
           Refresca tu día con el sabor
-          <span className="block text-tropical-cream mt-2">de un Oasis 🍦</span>
+          <span className="block mt-2">
+            de un <span className="text-tropical-pink" style={{
+              textShadow: '0 0 30px rgba(244, 114, 182, 0.8), 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3)'
+            }}>Oasis</span> 🍦
+          </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
+        <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto font-medium"
+           style={{
+             textShadow: '0 3px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4)'
+           }}>
           Helados artesanales cremosos con los sabores más exóticos y deliciosos
         </p>
         

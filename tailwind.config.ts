@@ -53,6 +53,7 @@ export default {
           palm: "hsl(var(--tropical-palm))",
           turquoise: "hsl(var(--tropical-turquoise))",
           cream: "hsl(var(--tropical-cream))",
+          pink: "hsl(var(--tropical-pink))",
         },
       },
       fontFamily: {
