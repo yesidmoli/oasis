@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run build:fix-404",
     "build:dev": "vite build --mode development",
+    "build:fix-404": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview"
   },
