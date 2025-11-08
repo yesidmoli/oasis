@@ -45,8 +45,13 @@ const Hero = () => {
         
         <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 animate-fade-in">
           Refresca tu día con el sabor
-          <span className="block mt-2">
-            de un <span className="text-tropical-pink">Oasis</span> 🍧
+          <span className="block mt-2 flex items-center justify-center gap-3">
+            de un <span className="text-tropical-pink">Oasis</span>
+            <img 
+              src="/Oasis Screan/mora.png" 
+              alt="Helado de mora" 
+              className="w-16 h-16 md:w-20 md:h-20 inline-block animate-float-slow drop-shadow-2xl"
+            />
           </span>
         </h1>
         
