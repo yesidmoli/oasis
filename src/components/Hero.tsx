@@ -27,11 +27,20 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="flex justify-center mb-8 animate-float-slow">
-          <img 
-            src={oasisLogo} 
-            alt="Oasis Helados Cremosos Logo" 
-            className="w-64 h-64 md:w-80 md:h-80 drop-shadow-2xl"
-          />
+          <div className="relative">
+            {/* Glow effect background */}
+            <div className="absolute inset-0 bg-white/40 rounded-full blur-3xl scale-110 animate-pulse-glow"></div>
+            
+            {/* Logo with multiple shadows */}
+            <img 
+              src={oasisLogo} 
+              alt="Oasis Helados Cremosos Logo" 
+              className="relative z-10 w-64 h-64 md:w-80 md:h-80"
+              style={{
+                filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 80px rgba(62, 218, 215, 0.4))',
+              }}
+            />
+          </div>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-playful font-bold text-white mb-6 drop-shadow-lg animate-fade-in">
