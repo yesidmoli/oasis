@@ -1,4 +1,7 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (Modern Method)
+
+# Este workflow usa el método moderno de GitHub Actions
+# Si tienes problemas, usa el workflow deploy-gh-pages.yml en su lugar
 
 on:
   push:
@@ -6,12 +9,23 @@ on:
       - main
   workflow_dispatch:
 
+# Permisos necesarios para hacer deploy
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Permitir solo un deployment concurrente
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,16 +56,16 @@ jobs:
         env:
           VITE_REPO_NAME: ${{ steps.repo.outputs.REPO_NAME }}
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        continue-on-error: true
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: false
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 

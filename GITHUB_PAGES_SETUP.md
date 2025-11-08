@@ -4,56 +4,54 @@ Este proyecto está configurado para desplegarse automáticamente en GitHub Page
 
 ## Configuración Inicial
 
-### ⚠️ IMPORTANTE: Pasos que DEBES completar ANTES de hacer push
+### ⚠️ Método Simplificado - No requiere configuración previa
 
-### 1. Habilitar GitHub Pages en tu repositorio (OBLIGATORIO)
+Este proyecto ahora usa un método más simple y confiable que **NO requiere** habilitar GitHub Pages manualmente. El workflow creará automáticamente la rama `gh-pages` y configurará todo por ti.
 
-**DEBES hacer esto ANTES de que el workflow funcione:**
+### 1. Habilitar GitHub Pages después del primer deploy
 
-1. Ve a tu repositorio en GitHub
-2. Haz clic en **Settings** (Configuración) en la parte superior del repositorio
-3. En el menú lateral izquierdo, busca y haz clic en **Pages**
-4. En la sección **Build and deployment**:
-   - En **Source**, selecciona **GitHub Actions** (NO selecciones "Deploy from a branch")
-   - Si no ves la opción "GitHub Actions", asegúrate de que tu repositorio sea público o que tengas GitHub Pro/Team
-5. **NO** selecciones ninguna rama específica, solo selecciona **GitHub Actions**
-6. Guarda los cambios (si hay un botón Save, haz clic en él)
+**Pasos simples:**
 
-**Nota**: Si no habilitas Pages primero, el workflow fallará con el error "Get Pages site failed".
+1. Haz commit y push de los cambios:
+   ```bash
+   git add .
+   git commit -m "Configurar despliegue en GitHub Pages"
+   git push origin main
+   ```
 
-### 2. Verificar permisos del repositorio
+2. Espera a que el workflow se ejecute (ve a la pestaña **Actions** en GitHub)
 
-Asegúrate de que tu cuenta de GitHub tenga los permisos necesarios:
-- Si el repositorio es privado, necesitas una cuenta de GitHub Pro, Team o Enterprise para usar GitHub Pages
-- Los repositorios públicos pueden usar GitHub Pages de forma gratuita
+3. Una vez que el workflow termine exitosamente, ve a **Settings** → **Pages** en tu repositorio
 
-### 3. Configuración del Repositorio
+4. En **Source**, selecciona la rama **gh-pages** y la carpeta **/ (root)**
+
+5. Haz clic en **Save**
+
+6. Tu sitio estará disponible en unos minutos en:
+   - `https://tu-usuario.github.io/nombre-repositorio` (si el repo no es username.github.io)
+   - O `https://tu-usuario.github.io` (si el repo es username.github.io)
+
+### 2. Configuración del Repositorio
 
 El proyecto está configurado para funcionar automáticamente con cualquier nombre de repositorio:
 
 - **Si tu repositorio es `usuario.github.io`**: El sitio se desplegará en `https://usuario.github.io`
 - **Si tu repositorio tiene otro nombre**: El sitio se desplegará en `https://usuario.github.io/nombre-repositorio`
 
-El workflow de GitHub Actions detecta automáticamente el nombre del repositorio y configura el base path correctamente.
+El workflow detecta automáticamente el nombre del repositorio y configura el base path correctamente.
 
-### 4. Hacer commit y push de los cambios
+### 3. Despliegue Automático
 
-Una vez que hayas habilitado GitHub Pages:
-
-```bash
-git add .
-git commit -m "Configurar despliegue en GitHub Pages"
-git push origin main
-```
-
-### 5. Despliegue Automático
-
-Una vez configurado correctamente, cada vez que hagas `push` a la rama `main`, el workflow:
+Una vez configurado, cada vez que hagas `push` a la rama `main`, el workflow:
 1. Instalará las dependencias
 2. Construirá el proyecto
-3. Desplegará automáticamente en GitHub Pages
+3. Desplegará automáticamente en la rama `gh-pages`
 
 Puedes ver el progreso en la pestaña **Actions** de tu repositorio. El despliegue puede tardar 1-2 minutos en completarse.
+
+**Nota sobre repositorios privados:**
+- Los repositorios públicos pueden usar GitHub Pages de forma gratuita
+- Si el repositorio es privado, necesitas una cuenta de GitHub Pro, Team o Enterprise
 
 ## Estructura de Archivos Creados
 
@@ -65,19 +63,21 @@ Puedes ver el progreso en la pestaña **Actions** de tu repositorio. El desplieg
 
 ## Solución de Problemas
 
-### Error: "Get Pages site failed" o "Please verify that the repository has Pages enabled"
+### Error: "Get Pages site failed" o problemas con el workflow
 
-**Este es el error más común y ocurre cuando GitHub Pages no está habilitado correctamente.**
+**Si estás usando el workflow moderno y tienes este error:**
 
-**Solución:**
-1. Ve a tu repositorio en GitHub
-2. Haz clic en **Settings** → **Pages**
-3. En **Source**, asegúrate de que esté seleccionado **GitHub Actions** (no "Deploy from a branch")
-4. Si GitHub Actions no aparece como opción:
-   - Verifica que tu repositorio sea público, O
-   - Si es privado, necesitas GitHub Pro, Team o Enterprise
-5. Guarda los cambios
-6. Espera 1-2 minutos y luego vuelve a ejecutar el workflow (haz un nuevo push o ve a Actions → Re-run jobs)
+El proyecto ahora usa el método tradicional de `gh-pages` que es más confiable. Si aún ves este error:
+
+1. Verifica que el workflow se haya ejecutado correctamente
+2. Ve a **Settings** → **Pages** y selecciona la rama **gh-pages** como fuente
+3. Si no ves la rama `gh-pages`, espera a que el workflow termine de ejecutarse
+
+### La rama gh-pages no aparece
+
+1. Verifica que el workflow se haya ejecutado exitosamente (marca verde ✓ en Actions)
+2. Ve a la pestaña **Code** y busca la rama `gh-pages` en el selector de ramas
+3. Si no existe, revisa los logs del workflow para ver si hubo algún error
 
 ### El sitio no se despliega
 
