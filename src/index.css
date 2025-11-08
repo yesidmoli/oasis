@@ -8,35 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Oasis Tropical Color Palette */
+    --background: 45 100% 96%;
+    --foreground: 30 50% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 30 50% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 30 50% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 100% 64%;
+    --primary-foreground: 30 50% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 32 100% 61%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 100% 90%;
+    --muted-foreground: 30 30% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 174 76% 54%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 100% 85%;
+    --input: 45 100% 85%;
+    --ring: 45 100% 64%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+    
+    /* Custom Oasis Colors */
+    --tropical-sun: 45 100% 64%;
+    --tropical-orange: 32 100% 61%;
+    --tropical-palm: 150 50% 45%;
+    --tropical-turquoise: 174 76% 54%;
+    --tropical-cream: 45 100% 96%;
+    
+    /* Gradients */
+    --gradient-tropical: linear-gradient(135deg, hsl(var(--tropical-sun)) 0%, hsl(var(--tropical-orange)) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(var(--tropical-orange)) 0%, hsl(var(--tropical-sun)) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--tropical-turquoise)) 0%, hsl(var(--tropical-palm)) 100%);
+    
+    /* Shadows */
+    --shadow-tropical: 0 10px 40px -10px hsl(var(--tropical-orange) / 0.4);
+    --shadow-float: 0 20px 60px -15px hsl(var(--tropical-sun) / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +79,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 50% 10%;
+    --foreground: 45 100% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 40% 15%;
+    --card-foreground: 45 100% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 40% 15%;
+    --popover-foreground: 45 100% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 45 100% 64%;
+    --primary-foreground: 30 50% 20%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 32 100% 61%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 30% 25%;
+    --muted-foreground: 45 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 174 76% 54%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 30% 25%;
+    --input: 30 30% 25%;
+    --ring: 45 100% 64%;
   }
 }
 
@@ -101,5 +116,131 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Quicksand', 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
+}
+
+@layer utilities {
+  /* Float Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(3deg);
+    }
+  }
+  
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--tropical-sun) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--tropical-sun) / 0.6);
+    }
+  }
+  
+  @keyframes drip {
+    0% {
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100px) scaleY(2);
+      opacity: 0;
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: var(--shadow-float);
+  }
+  
+  .gradient-tropical {
+    background: var(--gradient-tropical);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .text-tropical-sun {
+    color: hsl(var(--tropical-sun));
+  }
+  
+  .text-tropical-orange {
+    color: hsl(var(--tropical-orange));
+  }
+  
+  .text-tropical-palm {
+    color: hsl(var(--tropical-palm));
+  }
+  
+  .text-tropical-turquoise {
+    color: hsl(var(--tropical-turquoise));
+  }
+  
+  .bg-tropical-sun {
+    background-color: hsl(var(--tropical-sun));
+  }
+  
+  .bg-tropical-orange {
+    background-color: hsl(var(--tropical-orange));
+  }
+  
+  .bg-tropical-palm {
+    background-color: hsl(var(--tropical-palm));
+  }
+  
+  .bg-tropical-turquoise {
+    background-color: hsl(var(--tropical-turquoise));
+  }
+  
+  .font-playful {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
   }
 }
